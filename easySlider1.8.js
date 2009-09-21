@@ -53,7 +53,8 @@
 			pause:			2000,
 			continuous:		false, 
 			numeric: 		false,
-			numericId: 		'controls'
+			numericId: 		'controls',
+			pauseOnHover:	false	//pauseOnHover option added line 123 on 9/21/2009 by Jason Hebert
 		}; 
 		
 		var options = $.extend(defaults, options);  
@@ -119,6 +120,26 @@
 				});				
 			};
 			
+			/*
+			 *	pauseOnHover option allows user to stop animation by hovering mouse over #slider	
+			 *	"pause" case added to animate function line 178
+			 *
+			 */
+			if (options.pauseOnHover){
+				//pause animation on mouseenter event
+				$("#slider").mouseenter(function(){
+					animate("pause",true);
+				});
+				$("#slider").mouseleave(function(){
+					//re-animate based on continuous option value
+					if (options.continuous){
+						animate("next",false);
+					} else {
+						animate("next",true);
+					}
+				});
+			};
+			
 			function setCurrent(i){
 				i = parseInt(i)+1;
 				$("li", "#" + options.numericId).removeClass("current");
@@ -154,6 +175,9 @@
 						case "last":
 							t = ts;
 							break; 
+						case "pause":
+							t = t; //set slide to current slide so no movement occurs
+							break;
 						default:
 							t = dir;
 							break; 
