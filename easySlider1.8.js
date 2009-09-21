@@ -1,12 +1,14 @@
 /*
- * 	Easy Slider 1.7 - jQuery plugin
- *	written by Alen Grakalic	
+ * 	Easy Slider 1.8 - jQuery plugin
+ *	Original plugin written by Alen Grakalic	
  *	http://cssglobe.com/post/4004/easy-slider-15-the-easiest-jquery-plugin-for-sliding
  *
  *	Copyright (c) 2009 Alen Grakalic (http://cssglobe.com)
  *	Dual licensed under the MIT (MIT-LICENSE.txt)
  *	and GPL (GPL-LICENSE.txt) licenses.
- *
+ *	
+ *	Project forked by Jason P. Hebert - 9/21/2009
+ *	
  *	Built for jQuery library
  *	http://jquery.com
  *
