@@ -129,10 +129,10 @@
 			 */
 			if (options.pauseOnHover){
 				//pause animation on mouseenter event
-				$("#slider").mouseenter(function(){
+				$(obj).mouseenter(function(){
 					animate("pause",true);
 				});
-				$("#slider").mouseleave(function(){
+				$(obj).mouseleave(function(){
 					//re-animate based on continuous option value
 					if (options.continuous){
 						animate("next",false);
